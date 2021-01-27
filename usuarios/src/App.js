@@ -1,8 +1,15 @@
 import React from 'react';
 import './App.css';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
 
 function App() {
-  return <div>Meu App</div>;
+  return (
+    <div>
+      <Header />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
