@@ -15,7 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="./Components/Login/Login" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
