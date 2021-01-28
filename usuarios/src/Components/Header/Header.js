@@ -9,7 +9,7 @@ const Header = () => {
       <Container>
         <h1>Relíquias</h1>
         <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
+        <Link to="/Login">Login</Link>
       </Container>
     </Estrutura>
   );
