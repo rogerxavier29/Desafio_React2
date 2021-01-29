@@ -10,8 +10,9 @@ export const Formulario = styled.form`
   border-style: dashed;
   background: #d3d3d3;
   width: 500px;
-  height: 550px;
+  height: 580px;
   margin-left: 350px;
+  padding-bottom: 60px;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -33,4 +34,20 @@ export const Formulario = styled.form`
 export const Titulo = styled.h1`
   margin-left: 100px;
   padding-top: 20px;
+`;
+
+export const Botao = styled.button`
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+export const Linky = styled.section`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  font-size: 20px;
 `;
