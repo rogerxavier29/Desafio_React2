@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { Estrutura } from './styles';
+
 const Footer = () => {
   return (
-    <footer>
+    <Estrutura>
       <p>Relíquias. Alguns direitos Reservados</p>
-    </footer>
+    </Estrutura>
   );
 };
 
