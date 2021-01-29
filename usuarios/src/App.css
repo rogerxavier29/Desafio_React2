@@ -20,3 +20,13 @@ li {
 a:link {
   text-decoration: none;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.AppBody {
+  flex: 1;
+  min-height: calc(100vh + 10rem);
+}
