@@ -9,26 +9,28 @@ const LoginForm = () => {
   const [email, setEmail] = React.useState('');
   const [senha, setSenha] = React.useState('');
 
-  axios
-    .post('https://desafionodegx2.herokuapp.com/user', {
-      nomeUsuario: '',
-      email: '',
-      senha: '',
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
   function handleSubmit(event) {
     event.preventDefault();
+
+    axios
+      .post('https://desafionodegx2.herokuapp.com/swagger/', {
+        nomeUsuario,
+        email,
+        senha,
+      })
+      .then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        },
+      );
   }
 
   return (
     <Estrutura>
-      <Formulario action="" onSubmit={handleSubmit}>
+      <Formulario onSubmit={handleSubmit}>
         <Titulo>Cadastro do Usuário</Titulo>
         <label htmlFor="nomeUsuario">Usuario</label>
         <input
