@@ -4,29 +4,24 @@ import axios from 'axios';
 
 import { Estrutura, Formulario, Titulo, Botao, Linky } from './styles';
 import Input from '../../Form/Input';
+import useForm from '../../../Hooks/useForm';
 
 const LoginForm = () => {
-  const [nomeUsuario, setNomeUsuario] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [senha, setSenha] = React.useState('');
+  const nomeUsuario = useForm();
+  const email = useForm();
+  const senha = useForm();
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    axios
-      .post('https://desafionodegx2.herokuapp.com/swagger/', {
-        nomeUsuario,
-        email,
-        senha,
-      })
-      .then(
-        (response) => {
-          console.log(response);
-        },
-        (error) => {
-          console.log(error);
-        },
-      );
+    axios.post('https://desafionodegx2.herokuapp.com/swagger/', {}).then(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      },
+    );
   }
 
   return (
@@ -38,18 +33,21 @@ const LoginForm = () => {
           type="text"
           name="nomeUsuario"
           placeholder="Digite seu Nome"
+          {...nomeUsuario}
         />
         <Input
           label="Email"
           type="email"
           name="email"
-          placeholder="Digite seu Nome"
+          placeholder="Digite seu E-mail"
+          {...email}
         />
         <Input
           label="Senha"
           type="password"
           name="senha"
           placeholder="Digite sua Senha"
+          {...senha}
         />
 
         <Botao type="submit">Entrar</Botao>
