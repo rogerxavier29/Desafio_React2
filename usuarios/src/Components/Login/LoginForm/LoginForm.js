@@ -8,8 +8,8 @@ import useForm from '../../../Hooks/useForm';
 
 const LoginForm = () => {
   const nomeUsuario = useForm();
-  const email = useForm();
-  const senha = useForm();
+  const email = useForm('email');
+  const senha = useForm('password');
 
   function handleSubmit(event) {
     event.preventDefault();
