@@ -31,30 +31,27 @@ const LoginForm = () => {
 
   return (
     <Estrutura>
-      <Formulario onSubmit={handleSubmit}>
+      <Formulario action="" onSubmit={handleSubmit}>
         <Titulo>Cadastro do Usuário</Titulo>
-        <Input label="Usuário" />
-        <label htmlFor="nomeUsuario">Usuario</label>
-        <input
+        <Input
+          label="Usuário"
           type="text"
+          name="nomeUsuario"
           placeholder="Digite seu Nome"
-          value={nomeUsuario}
-          onChange={({ target }) => setNomeUsuario(target.value)}
         />
-        <label htmlFor="Email">Email</label>
-        <input
+        <Input
+          label="Email"
           type="email"
-          placeholder="Email"
-          value={email}
-          onChange={({ target }) => setEmail(target.value)}
+          name="email"
+          placeholder="Digite seu Nome"
         />
-        <label htmlFor="Senha">Senha</label>
-        <input
+        <Input
+          label="Senha"
           type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={({ target }) => setSenha(target.value)}
+          name="senha"
+          placeholder="Digite sua Senha"
         />
+
         <Botao type="submit">Entrar</Botao>
         <Linky>
           <Link to="/cadastrar/login">Ja Cadastrado!</Link>
