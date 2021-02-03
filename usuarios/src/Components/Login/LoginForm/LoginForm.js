@@ -14,14 +14,24 @@ const LoginForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    axios.post('https://desafionodegx2.herokuapp.com/swagger/', {}).then(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
+    if (nomeUsuario.validate() && email.validate() && senha.validate()) {
+      axios
+        .post('https://desafionodegx2.herokuapp.com/users/', {
+          name: nomeUsuario.value,
+          email: email.value,
+          password: senha.value,
+        })
+        .then(
+          (response) => {
+            if (response.data === response.data) {
+              window.location.replace('/cadastrar/login');
+            }
+          },
+          (error) => {
+            console.log(error);
+          },
+        );
+    }
   }
 
   return (
