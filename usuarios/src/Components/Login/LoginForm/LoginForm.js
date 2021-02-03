@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { Estrutura, Formulario, Titulo, Botao, Linky } from './styles';
+import Input from '../../Form/Input';
 
 const LoginForm = () => {
   const [nomeUsuario, setNomeUsuario] = React.useState('');
@@ -32,6 +33,7 @@ const LoginForm = () => {
     <Estrutura>
       <Formulario onSubmit={handleSubmit}>
         <Titulo>Cadastro do Usuário</Titulo>
+        <Input label="Usuário" />
         <label htmlFor="nomeUsuario">Usuario</label>
         <input
           type="text"
