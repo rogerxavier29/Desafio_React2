@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-import LoginForm from './LoginForm/LoginForm';
 import LoginCreate from './LoginCreate/LoginCreate';
+import LoginForm from './LoginForm/LoginForm';
 
 const Login = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<LoginForm />} />
-        <Route path="./LoginCreate" element={<LoginCreate />} />
+        <Route path="logar" element={<LoginCreate />} />
       </Routes>
     </div>
   );
