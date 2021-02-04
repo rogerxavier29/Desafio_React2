@@ -24,7 +24,7 @@ const LoginForm = () => {
         .then(
           (response) => {
             if (response.data === response.data) {
-              window.location.replace('/cadastrar/login');
+              window.location.replace('/Login/logar');
             }
           },
           (error) => {
