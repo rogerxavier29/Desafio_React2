@@ -22,6 +22,9 @@ export const Formulario = styled.form`
     margin-left: 120px;
     border-radius: 3px;
   }
+  label {
+    margin-left: 125px;
+  }
 `;
 
 export const Titulo = styled.h1`
