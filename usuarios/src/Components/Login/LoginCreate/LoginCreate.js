@@ -20,6 +20,14 @@ const LoginCreate = () => {
       .then(
         (response) => {
           console.log(response);
+          if (response.data.token) {
+            sessionStorage.setItem('token', response.data.token);
+            sessionStorage.setItem('id', response.data.user.id);
+            sessionStorage.setItem('name', response.data.user.name);
+            sessionStorage.setItem('email', response.data.user.email);
+            console.log(sessionStorage);
+            window.location.replace('/');
+          }
         },
         (error) => {
           console.log(error);
