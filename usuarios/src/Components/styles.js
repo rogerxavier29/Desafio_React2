@@ -10,6 +10,11 @@ export const Estrutura = styled.div`
 export const Pnome = styled.p`
   font-size: 20px;
   margin-left: 10px;
+  span {
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 `;
 
 export const Title1 = styled.h1`

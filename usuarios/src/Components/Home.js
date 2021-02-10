@@ -43,7 +43,9 @@ const Home = () => {
 
   return (
     <Estrutura>
-      <Pnome>Bem-vindo, {sessionStorage.getItem('name')}</Pnome>
+      <Pnome>
+        Bem-vindo, <span>{sessionStorage.getItem('name')}</span>
+      </Pnome>
       <Title1>Adicionar Produtos</Title1>
       <Formulario onSubmit={handleSubmit}>
         <Input
