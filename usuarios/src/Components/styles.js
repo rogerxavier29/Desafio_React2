@@ -30,6 +30,7 @@ export const Formulario = styled.form`
   background: #b0c4de;
   border-style: dashed;
   display: grid;
+  box-shadow: 30px 30px 20px black;
   input {
     margin-left: 18px;
     margin-top: 60px;
