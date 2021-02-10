@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import { Estrutura, Formulario, Titulo, Botao, Linky } from './styles';
+import { Estrutura, Formulario, Titulo, Linky } from './styles';
 import Input from '../../Form/Input';
 import useForm from '../../../Hooks/useForm';
 
@@ -59,10 +59,9 @@ const LoginForm = () => {
           placeholder="Digite sua Senha"
           {...senha}
         />
-
-        <Botao type="submit">Entrar</Botao>
+        <button type="submit">Entrar</button>
         <Linky>
-          <Link to="/cadastrar/login">Ja Cadastrado!</Link>
+          <Link to="/Login/logar">Fazer Login!</Link>
         </Linky>
       </Formulario>
     </Estrutura>
