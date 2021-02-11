@@ -3,7 +3,7 @@ import Input from '../../Form/Input';
 import axios from 'axios';
 import useForm from '../../../Hooks/useForm';
 
-import { Estrutura, Formulario, Titulo, Botao } from './styles';
+import { Estrutura, Formulario, Titulo } from './styles';
 
 const LoginCreate = () => {
   const email = useForm('email');
@@ -25,8 +25,7 @@ const LoginCreate = () => {
             sessionStorage.setItem('id', response.data.user.id);
             sessionStorage.setItem('name', response.data.user.name);
             sessionStorage.setItem('email', response.data.user.email);
-            console.log(sessionStorage);
-            window.location.replace('/');
+            window.location.replace('/home');
           }
         },
         (error) => {
@@ -53,7 +52,7 @@ const LoginCreate = () => {
           placeholder="Digite sua senha"
           {...senha}
         />
-        <Botao>Entrar</Botao>
+        <button>Entrar</button>
       </Formulario>
     </Estrutura>
   );
