@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+</style>;
+
 export const Estrutura = styled.div`
   background: #87cefa;
   padding-bottom: 200px;
@@ -32,6 +37,7 @@ export const Formulario = styled.form`
     margin-left: 85px;
     padding-top: 60px;
     padding-bottom: 0px;
+    font-family: 'Nunito', sans-serif;
     cursor: pointer;
   }
   button {
@@ -49,8 +55,9 @@ export const Formulario = styled.form`
 `;
 
 export const Titulo = styled.h1`
-  margin-left: 100px;
-  padding-top: 20px;
+  margin-left: 80px;
+  padding-top: 10px;
+  font-family: 'Nunito', sans-serif;
   cursor: pointer;
 `;
 
@@ -59,7 +66,11 @@ export const Linky = styled.section`
   margin-bottom: 20px;
   margin-left: 50px;
   font-size: 20px;
+  font-family: 'Nunito', sans-serif;
   color: Red;
   cursor: pointer;
   text-decoration: underline;
+  a {
+    color: #191970;
+  }
 `;
