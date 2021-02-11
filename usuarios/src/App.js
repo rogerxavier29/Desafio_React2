@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home';
 import Login from './Components/Login/Login';
+import { ProdutoUsado } from './ProdutoUsado';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Header />
         <main className="AppBody">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<ProdutoUsado />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
           </Routes>
         </main>
