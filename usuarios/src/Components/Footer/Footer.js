@@ -5,7 +5,7 @@ import { Estrutura } from './styles';
 const Footer = () => {
   return (
     <Estrutura>
-      <p>Relíquias. Alguns direitos Reservados</p>
+      <p>Produtos Usados. Alguns direitos Reservados</p>
     </Estrutura>
   );
 };
