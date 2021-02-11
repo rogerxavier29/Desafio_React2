@@ -18,12 +18,19 @@ export const Container = styled.nav`
   align-items: center;
   margin-left: 30px;
   padding-top: 10px;
+  @media (max-width: 500px) {
+    display: flex;
+    padding-top: 10px;
+  }
   h1 {
     margin-left: 5px;
     color: gold;
     font-size: 30px;
     font-family: 'Nunito', sans-serif;
     cursor: pointer;
+    @media (max-width: 500px) {
+      font-size: 15px;
+    }
   }
   a {
     margin-right: 80px;
