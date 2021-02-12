@@ -20,7 +20,6 @@ export const Container = styled.nav`
   padding-top: 10px;
   @media (max-width: 500px) {
     display: flex;
-    padding-top: 10px;
   }
   h1 {
     margin-left: 5px;
@@ -29,7 +28,9 @@ export const Container = styled.nav`
     font-family: 'Nunito', sans-serif;
     cursor: pointer;
     @media (max-width: 500px) {
-      font-size: 15px;
+      font-size: 17px;
+      padding-top: 10px;
+      flex: 1;
     }
   }
   a {
@@ -38,5 +39,10 @@ export const Container = styled.nav`
     color: gold;
     font-family: 'Nunito', sans-serif;
     cursor: pointer;
+    @media (max-width: 500px) {
+      font-size: 13px;
+      padding-top: 12px;
+      margin-right: 60px;
+    }
   }
 `;
