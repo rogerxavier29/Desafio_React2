@@ -23,17 +23,28 @@ export const Formulario = styled.form`
   grid-template-columns: 1fr;
   border-radius: 8px;
   box-shadow: 20px 20px 10px black;
+  @media (max-width: 500px) {
+    width: 350px;
+  }
   input {
     width: 250px;
     height: 25px;
     margin-left: 120px;
     border-radius: 3px;
     cursor: pointer;
+    @media (max-width: 500px) {
+      width: 250px;
+      margin-left: 60px;
+    }
   }
   label {
     margin-left: 125px;
     cursor: pointer;
     font-family: 'Nunito', sans-serif;
+    @media (max-width: 500px) {
+      margin-left: 70px;
+      font-size: 14px;
+    }
   }
   button {
     width: 150px;
@@ -54,4 +65,7 @@ export const Titulo = styled.h1`
   font-size: 30px;
   font-family: 'Nunito', sans-serif;
   cursor: pointer;
+  @media (max-width: 500px) {
+    font-size: 25px;
+  }
 `;
