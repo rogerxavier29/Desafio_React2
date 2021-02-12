@@ -16,12 +16,18 @@ export const Pnome = styled.p`
   font-size: 20px;
   margin-left: 10px;
   font-family: 'Nunito', sans-serif;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
   span {
     font-size: 23px;
     font-weight: bold;
     font-family: 'Nunito', sans-serif;
     color: #191970;
     cursor: pointer;
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -30,6 +36,11 @@ export const Title1 = styled.h1`
   margin-top: 35px;
   font-family: 'Nunito', sans-serif;
   font-size: 25px;
+  @media (max-width: 500px) {
+    font-size: 20px;
+    margin-left: 150px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const Formulario = styled.form`
@@ -42,6 +53,12 @@ export const Formulario = styled.form`
   border-radius: 8px;
   display: grid;
   box-shadow: 30px 30px 20px black;
+  @media (max-width: 500px) {
+    width: 380px;
+    height: 350px;
+    margin-top: 5px;
+    margin-left: 50px;
+  }
   input {
     margin-left: 18px;
     margin-top: 60px;
@@ -50,10 +67,18 @@ export const Formulario = styled.form`
     border: 0.1px;
     border-radius: 5px;
     border-style: solid;
+    @media (max-width: 500px) {
+      width: 170px;
+      height: 27px;
+    }
   }
   label {
     margin-left: 80px;
     font-family: 'Nunito', sans-serif;
+    @media (max-width: 500px) {
+      margin-left: 10px;
+      font-size: 15px;
+    }
   }
   button {
     width: 100px;
@@ -63,6 +88,9 @@ export const Formulario = styled.form`
     margin-bottom: 20px;
     border-radius: 8px;
     cursor: pointer;
+    @media (max-width: 500px) {
+      margin: 0 auto;
+    }
   }
   button:focus {
     outline: 0;
