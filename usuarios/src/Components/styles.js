@@ -88,12 +88,18 @@ export const Formulario = styled.form`
     margin-bottom: 20px;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0.5px 0.5px 0 0.5px #333;
+    transition: box-shadow 0.5s, transform 0.5s ease;
     @media (max-width: 500px) {
       margin: 0 auto;
     }
   }
   button:focus {
     outline: 0;
+  }
+  button:active {
+    box-shadow: 0 0 0 0 #333, inset 0.5px 0.5px 0.5px #333;
+    transform: translate(1px 1px);
   }
 `;
 

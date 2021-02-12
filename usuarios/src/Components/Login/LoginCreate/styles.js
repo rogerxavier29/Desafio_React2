@@ -52,9 +52,15 @@ export const Formulario = styled.form`
     border-radius: 5px;
     margin: 0 auto;
     cursor: pointer;
+    box-shadow: 0.5px 0.5px 0 0.5px #333;
+    transition: box-shadow 0.5s, transform 0.5s ease;
   }
   button:focus {
     outline: 0;
+  }
+  button:active {
+    box-shadow: 0 0 0 0 #333, inset 0.5px 0.5px 0.5px #333;
+    transform: translate(1px 1px);
   }
 `;
 
