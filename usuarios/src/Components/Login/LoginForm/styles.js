@@ -9,6 +9,9 @@ export const Estrutura = styled.div`
   background: #87cefa;
   padding-bottom: 200px;
   padding-top: 30px;
+  @media (max-width: 500px) {
+    padding-bottom: 300px;
+  }
 `;
 
 export const Formulario = styled.form`
@@ -24,6 +27,12 @@ export const Formulario = styled.form`
   display: grid;
   grid-template-columns: 1fr;
   box-shadow: 40px 40px 20px black;
+  @media (max-width: 500px) {
+    width: 350px;
+    height: 400px;
+    margin-left: 50px;
+    padding-bottom: 50px;
+  }
   input {
     width: 300px;
     height: 30px;
@@ -32,6 +41,10 @@ export const Formulario = styled.form`
     margin-left: 80px;
     border-radius: 5px;
     cursor: pointer;
+    @media (max-width: 500px) {
+      width: 200px;
+      height: 28px;
+    }
   }
   label {
     margin-left: 85px;
@@ -39,6 +52,9 @@ export const Formulario = styled.form`
     padding-bottom: 0px;
     font-family: 'Nunito', sans-serif;
     cursor: pointer;
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
   }
   button {
     width: 150px;
@@ -48,6 +64,12 @@ export const Formulario = styled.form`
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    @media (max-width: 500px) {
+      margin: 0 auto;
+      width: 100px;
+      height: 25px;
+      margin-top: 25px;
+    }
   }
   button:focus {
     outline: 0;
@@ -59,6 +81,11 @@ export const Titulo = styled.h1`
   padding-top: 10px;
   font-family: 'Nunito', sans-serif;
   cursor: pointer;
+  @media (max-width: 500px) {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
 `;
 
 export const Linky = styled.section`
@@ -70,6 +97,10 @@ export const Linky = styled.section`
   color: Red;
   cursor: pointer;
   text-decoration: underline;
+  @media (max-width: 500px) {
+    padding-top: 30px;
+    font-size: 15px;
+  }
   a {
     color: #191970;
   }
