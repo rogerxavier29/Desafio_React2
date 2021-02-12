@@ -64,7 +64,8 @@ export const Formulario = styled.form`
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
-    box-shadow: 1px 1px 0 0.5px #333;
+    box-shadow: 0.5px 0.5px 0 0.5px #333;
+    transition: box-shadow 0.5s, transform 0.5s ease;
     @media (max-width: 500px) {
       margin: 0 auto;
       width: 100px;
@@ -74,6 +75,10 @@ export const Formulario = styled.form`
   }
   button:focus {
     outline: 0;
+  }
+  button:active {
+    box-shadow: 0 0 0 0 #333, inset 0.5px 0.5px 0.5px #333;
+    transform: translate(1px 1px);
   }
 `;
 
