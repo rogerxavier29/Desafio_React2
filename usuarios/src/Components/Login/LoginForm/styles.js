@@ -64,6 +64,7 @@ export const Formulario = styled.form`
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    box-shadow: 1px 1px 0 0.5px #333;
     @media (max-width: 500px) {
       margin: 0 auto;
       width: 100px;
