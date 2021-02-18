@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import useForm from '../Hooks/useForm';
-import Input from './Form/Input';
+import useForm from '../../../Hooks/useForm';
+import Input from '../../../Components/Form/Input';
+import { Route } from 'react-router-dom';
 
 import { Estrutura, Title1, Formulario, Descricao, Pnome } from './styles';
+import ListaProduto from '../Listagem/ListaProduto';
 
 const Home = () => {
   const nomeProduto = useForm();
@@ -20,8 +22,8 @@ const Home = () => {
       const data = {
         name: nomeProduto.value,
         descricao: descricao.value,
-        logo:
-          'sdfsdfsdfssdjasjdijasdjasoijdaosijdaosjdajosajosadjjsdjsaijdojdas.jpg',
+        logo: 'c6b0080241d5a5fa0274847c1c738b71.jpg',
+        manual: 'b5b8be673eb68193a7f5b1628be6ad03.pdf',
       };
 
       const options = {
@@ -46,6 +48,7 @@ const Home = () => {
       <Pnome>
         Bem-vindo, <span>{sessionStorage.getItem('name')}</span>
       </Pnome>
+      <Route path="/listaProduto" element={<ListaProduto />} />
       <Title1>Adicionar Produtos</Title1>
       <Formulario onSubmit={handleSubmit}>
         <Input
