@@ -1,13 +1,19 @@
 import React from 'react';
 
-const Estrutura = ({ onClose = () => {}, children }) => {
+import { Modal, Container } from './styles';
+
+const Estrutura = ({ id = 'modal', onClose = () => {}, children }) => {
+  const handleOutsideClick = (e) => {
+    if (e.target.id === id) onClose();
+  };
+
   return (
-    <div>
-      <div>
+    <Modal id="modal" onClick={handleOutsideClick}>
+      <Container>
         <button onClick={onClose}>Close</button>
         <div>{children}</div>
-      </div>
-    </div>
+      </Container>
+    </Modal>
   );
 };
 
