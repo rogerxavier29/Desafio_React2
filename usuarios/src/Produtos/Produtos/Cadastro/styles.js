@@ -106,3 +106,8 @@ export const Formulario = styled.form`
 export const Descricao = styled.section`
   margin-left: 8px;
 `;
+
+export const Linki = styled.div`
+  margin-top: 20px;
+  margin-left: 20px;
+`;
