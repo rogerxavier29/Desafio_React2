@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Modal from '../../../Modal/Modal';
 
+import { ListaProd, Geral, Botao } from './styles';
+
 const ListaProduto = () => {
   const [listaProd, setListaProd] = useState();
   const [openModal, setOpenModal] = useState(false);
@@ -35,24 +37,24 @@ const ListaProduto = () => {
   }
 
   return (
-    <div>
+    <Geral>
       {openModal && <Modal onClose={closeModal} productId={openModal} />}
-      <button onClick={handleClick}>Produtos</button>
+      <Botao onClick={handleClick}>Produtos</Botao>
       <ul>
         {listaProd &&
           listaProd.map(({ id, name, descricao, logo, manual }) => (
             <li key={id}>
-              <div>
+              <ListaProd>
                 <button onClick={() => setOpenModal(id)}>Detalhes</button>
                 <p>Nome: {name}</p>
                 <p>Descrição: {descricao}</p>
                 <p>Logo:{logo}</p>
                 <p>Manual:{manual}</p>
-              </div>
+              </ListaProd>
             </li>
           ))}
       </ul>
-    </div>
+    </Geral>
   );
 };
 
