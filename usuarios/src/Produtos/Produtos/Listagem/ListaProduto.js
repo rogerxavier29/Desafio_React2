@@ -36,12 +36,14 @@ const ListaProduto = () => {
     setOpenModal(false);
   }
   async function deleteProd(id) {
-    axios
-      .delete(`https://desafionodegx2.herokuapp.com/products/` + id, options)
-      .then((res) => {
-        const atualProd = listaProd.filter((lista) => lista.id !== id);
-        setListaProd(atualProd);
-      });
+    if (window.confirm('Tem certeza que deseja excluir ??')) {
+      axios
+        .delete(`https://desafionodegx2.herokuapp.com/products/` + id, options)
+        .then((res) => {
+          const atualProd = listaProd.filter((lista) => lista.id !== id);
+          setListaProd(atualProd);
+        });
+    }
   }
 
   return (
