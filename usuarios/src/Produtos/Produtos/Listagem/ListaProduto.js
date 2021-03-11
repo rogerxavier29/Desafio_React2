@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Modal from '../../../Modal/Modal';
 
-import { ListaProd, Geral, Botao, Btndel } from './styles';
+import { ListaProd, Geral, Botao, Botoes, Btndel, BtnProd } from './styles';
 
 const ListaProduto = () => {
   const [listaProd, setListaProd] = useState();
@@ -55,8 +55,10 @@ const ListaProduto = () => {
           listaProd.map(({ id, name, descricao, logo, manual }) => (
             <li key={id}>
               <ListaProd>
-                <button onClick={() => setOpenModal(id)}>Detalhes</button>
-                <Btndel onClick={() => deleteProd(id)}>Deletar</Btndel>
+                <Botoes>
+                  <BtnProd onClick={() => setOpenModal(id)}>Detalhes</BtnProd>
+                  <Btndel onClick={() => deleteProd(id)}>Deletar</Btndel>
+                </Botoes>
                 <p>Nome: {name}</p>
                 <p>Descrição: {descricao}</p>
                 <p>Logo:{logo}</p>

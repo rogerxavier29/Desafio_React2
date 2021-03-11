@@ -23,14 +23,30 @@ export const ListaProd = styled.div`
     margin-bottom: 15px;
     margin-left: 5px;
   }
-  button {
-    width: 100px;
-    margin-top: 5px;
-    margin-left: 400px;
-  }
 `;
+
+export const Botoes = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-left: 170px;
+`;
+
+export const BtnProd = styled.button`
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 80px;
+  border-radius: 3px;
+  background: #00ff7f;
+  cursor: pointer;
+`;
+
 export const Btndel = styled.button`
   width: 100px;
-  margin-left: 300px;
+  height: 30px;
   margin-top: 10px;
+  margin-left: 80px;
+  border-radius: 3px;
+  background: #b22222;
+  color: #ffff;
 `;
