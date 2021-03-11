@@ -29,3 +29,8 @@ export const ListaProd = styled.div`
     margin-left: 400px;
   }
 `;
+export const Btndel = styled.button`
+  width: 100px;
+  margin-left: 300px;
+  margin-top: 10px;
+`;

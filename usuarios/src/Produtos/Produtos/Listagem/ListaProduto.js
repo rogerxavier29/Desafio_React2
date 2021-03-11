@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Modal from '../../../Modal/Modal';
 
-import { ListaProd, Geral, Botao } from './styles';
+import { ListaProd, Geral, Botao, Btndel } from './styles';
 
 const ListaProduto = () => {
   const [listaProd, setListaProd] = useState();
@@ -35,6 +35,14 @@ const ListaProduto = () => {
   function closeModal() {
     setOpenModal(false);
   }
+  async function deleteProd(id) {
+    axios
+      .delete(`https://desafionodegx2.herokuapp.com/products/` + id, options)
+      .then((res) => {
+        const atualProd = listaProd.filter((lista) => lista.id !== id);
+        setListaProd(atualProd);
+      });
+  }
 
   return (
     <Geral>
@@ -46,6 +54,7 @@ const ListaProduto = () => {
             <li key={id}>
               <ListaProd>
                 <button onClick={() => setOpenModal(id)}>Detalhes</button>
+                <Btndel onClick={() => deleteProd(id)}>Deletar</Btndel>
                 <p>Nome: {name}</p>
                 <p>Descrição: {descricao}</p>
                 <p>Logo:{logo}</p>
