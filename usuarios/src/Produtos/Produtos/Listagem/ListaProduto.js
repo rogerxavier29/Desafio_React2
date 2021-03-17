@@ -73,19 +73,21 @@ const ListaProduto = () => {
   }
 
   function alterarProd(num_id) {
-    if (window.confirm('Tem certeza que deseja Alterar o produto ??')) {
-      axios
-        .put(
-          `https://desafionodegx2.herokuapp.com/products/` + num_id,
-          data,
-          options,
-        )
-        .then((res) => {
-          const alterarProd = listaProd.slice(
-            (alterar) => alterar.num_id !== num_id,
-          );
-          setListaProd(alterarProd);
-        });
+    if (name.validate() && descricao.validate()) {
+      if (window.confirm('Tem certeza que deseja Alterar o produto ??')) {
+        axios
+          .put(
+            `https://desafionodegx2.herokuapp.com/products/` + num_id,
+            data,
+            options,
+          )
+          .then((res) => {
+            const alterarProd = listaProd.slice(
+              (alterar) => alterar.num_id !== num_id,
+            );
+            setListaProd(alterarProd);
+          });
+      }
     }
   }
   return (
