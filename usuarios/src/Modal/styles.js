@@ -12,9 +12,9 @@ export const Content = styled.div`
 `;
 
 export const Container = styled.div`
-  background: #fff;
-  width: 400px;
-  height: 250px;
+  background: #f0f8ff;
+  width: 470px;
+  height: 220px;
   margin-top: -60px;
   border-radius: 3px;
 
