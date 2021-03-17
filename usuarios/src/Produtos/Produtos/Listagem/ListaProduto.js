@@ -7,11 +7,14 @@ import Modal2 from 'react-modal';
 import {
   ListaProd,
   Geral,
-  Botao,
   Botoes,
   Btndel,
   BtnProd,
   BtnEdit,
+  SectionInputs,
+  DivInput1,
+  DivInput2,
+  ListaProd2,
 } from './styles';
 import Input from '../../../Components/Form/Input';
 
@@ -106,30 +109,40 @@ const ListaProduto = () => {
       </ul>
       <Modal2 isOpen={openIsModal} onRequestClose={() => setOpenIsModal(false)}>
         <button onClick={() => setOpenIsModal(false)}>X</button>
-        <Input
-          type="text"
-          name="nomeProduto"
-          placeholder="Nome do Produto"
-          {...name}
-        />
-        <Input
-          label="Descrição"
-          type="text"
-          name="descricao"
-          placeholder="Faça a descrição do Produto"
-          {...descricao}
-        />
+
+        <SectionInputs>
+          <DivInput1>
+            <Input
+              label="Nome: "
+              type="text"
+              name="Nome"
+              placeholder="Nome"
+              {...name}
+            />
+          </DivInput1>
+
+          <DivInput2>
+            <Input
+              label="Descrição: "
+              type="text"
+              name="descricao"
+              placeholder="Faça a descrição do Produto"
+              {...descricao}
+            />
+          </DivInput2>
+        </SectionInputs>
+
         <ul>
           {listaProd &&
             listaProd.map(({ id, name, descricao, logo, manual }) => (
               <li key={id}>
-                <ListaProd>
+                <ListaProd2>
+                  <button onClick={() => alterarProd(id)}>Alterar</button>
                   <p>Nome: {name}</p>
                   <p>Descrição: {descricao}</p>
                   <p>Logo:{logo}</p>
                   <p>Manual:{manual}</p>
-                  <button onClick={() => alterarProd(id)}>Editar</button>
-                </ListaProd>
+                </ListaProd2>
               </li>
             ))}
         </ul>
