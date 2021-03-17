@@ -62,7 +62,7 @@ const ListaProduto = () => {
     setOpenModal(false);
   }
   async function deleteProd(id) {
-    if (window.confirm('Tem certeza que deseja excluir ??')) {
+    if (window.confirm('Tem certeza que deseja excluir o produto ??')) {
       axios
         .delete(`https://desafionodegx2.herokuapp.com/products/` + id, options)
         .then((res) => {
@@ -73,18 +73,20 @@ const ListaProduto = () => {
   }
 
   function alterarProd(num_id) {
-    axios
-      .put(
-        `https://desafionodegx2.herokuapp.com/products/` + num_id,
-        data,
-        options,
-      )
-      .then((res) => {
-        const alterarProd = listaProd.slice(
-          (alterar) => alterar.num_id !== num_id,
-        );
-        setListaProd(alterarProd);
-      });
+    if (window.confirm('Tem certeza que deseja Alterar o produto ??')) {
+      axios
+        .put(
+          `https://desafionodegx2.herokuapp.com/products/` + num_id,
+          data,
+          options,
+        )
+        .then((res) => {
+          const alterarProd = listaProd.slice(
+            (alterar) => alterar.num_id !== num_id,
+          );
+          setListaProd(alterarProd);
+        });
+    }
   }
   return (
     <Geral>
@@ -107,6 +109,7 @@ const ListaProduto = () => {
             </li>
           ))}
       </ul>
+
       <Modal2 isOpen={openIsModal} onRequestClose={() => setOpenIsModal(false)}>
         <button onClick={() => setOpenIsModal(false)}>X</button>
 
