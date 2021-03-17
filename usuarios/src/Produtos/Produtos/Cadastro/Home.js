@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import useForm from '../../../Hooks/useForm';
 import Input from '../../../Components/Form/Input';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   Estrutura,
@@ -12,7 +12,6 @@ import {
   Pnome,
   Linki,
 } from './styles';
-import ListaProduto from '../Listagem/ListaProduto';
 
 const Home = () => {
   const nomeProduto = useForm();
