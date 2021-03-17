@@ -1,14 +1,7 @@
 import styled from 'styled-components';
 
-export const Botao = styled.button`
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-`;
-
 export const Geral = styled.div`
   background: #f0fff0;
-  width: 100%;
 `;
 
 export const ListaProd = styled.div`
@@ -16,8 +9,7 @@ export const ListaProd = styled.div`
   z-index: 100px;
   margin-top: 5px;
   border-style: groove;
-  border-bottom: 0.5rem;
-
+  border-top: 0.5rem;
   p {
     margin-top: 7px;
     margin-bottom: 15px;
@@ -60,4 +52,48 @@ export const BtnEdit = styled.button`
   border-radius: 3px;
   background: #ffd700;
   cursor: pointer;
+`;
+
+export const SectionInputs = styled.section`
+  width: 700px;
+  height: 70px;
+  border-style: dotted;
+  background: #dcdcdc;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: 80px;
+  margin-bottom: 80px;
+`;
+
+export const DivInput1 = styled.div`
+  margin-top: 20px;
+  margin-bottom: 80px;
+  margin-left: 50px;
+`;
+
+export const DivInput2 = styled.div`
+  margin-top: 20px;
+  margin-bottom: 80px;
+  margin-left: 80px;
+`;
+
+export const ListaProd2 = styled.div`
+  display: grid;
+  z-index: 100px;
+  margin-top: 5px;
+  border-style: groove;
+  border-bottom: 0.5rem;
+  p {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+  }
+
+  button {
+    width: 100px;
+    border-radius: 3px;
+    margin-left: 600px;
+    margin-top: 5px;
+  }
 `;
