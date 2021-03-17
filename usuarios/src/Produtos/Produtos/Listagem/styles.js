@@ -49,4 +49,15 @@ export const Btndel = styled.button`
   border-radius: 3px;
   background: #b22222;
   color: #ffff;
+  cursor: pointer;
+`;
+
+export const BtnEdit = styled.button`
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 80px;
+  border-radius: 3px;
+  background: #ffd700;
+  cursor: pointer;
 `;
