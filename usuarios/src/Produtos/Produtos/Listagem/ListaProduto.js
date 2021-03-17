@@ -1,12 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Modal from '../../../Modal/Modal';
+import useForm from '../../../Hooks/useForm';
+import Modal2 from 'react-modal';
 
-import { ListaProd, Geral, Botao, Botoes, Btndel, BtnProd } from './styles';
+import {
+  ListaProd,
+  Geral,
+  Botao,
+  Botoes,
+  Btndel,
+  BtnProd,
+  BtnEdit,
+} from './styles';
+import Input from '../../../Components/Form/Input';
 
 const ListaProduto = () => {
   const [listaProd, setListaProd] = useState();
   const [openModal, setOpenModal] = useState(false);
+  const [openIsModal, setOpenIsModal] = useState(false);
+
+  const name = useForm();
+  const descricao = useForm();
+
+  const data = {
+    name: name.value,
+    descricao: descricao.value,
+    logo: 'c6b0080241d5a5fa0274847c1c738b71.jpg',
+    manual: 'b5b8be673eb68193a7f5b1628be6ad03.pdf',
+  };
 
   const token = sessionStorage.getItem('token');
 
@@ -18,9 +40,10 @@ const ListaProduto = () => {
 
   const url = 'https://desafionodegx2.herokuapp.com/products/';
 
-  function handleClick(event) {
-    event.preventDefault();
-
+  useEffect(() => {
+    getlistaProducts();
+  }, []);
+  const getlistaProducts = async () => {
     axios
       .get(url, options)
       .then((res) => {
@@ -30,7 +53,7 @@ const ListaProduto = () => {
       .catch((error) => {
         console.error(error);
       });
-  }
+  };
 
   function closeModal() {
     setOpenModal(false);
@@ -46,10 +69,23 @@ const ListaProduto = () => {
     }
   }
 
+  function alterarProd(num_id) {
+    axios
+      .put(
+        `https://desafionodegx2.herokuapp.com/products/` + num_id,
+        data,
+        options,
+      )
+      .then((res) => {
+        const alterarProd = listaProd.slice(
+          (alterar) => alterar.num_id !== num_id,
+        );
+        setListaProd(alterarProd);
+      });
+  }
   return (
     <Geral>
       {openModal && <Modal onClose={closeModal} productId={openModal} />}
-      <Botao onClick={handleClick}>Produtos</Botao>
       <ul>
         {listaProd &&
           listaProd.map(({ id, name, descricao, logo, manual }) => (
@@ -57,6 +93,7 @@ const ListaProduto = () => {
               <ListaProd>
                 <Botoes>
                   <BtnProd onClick={() => setOpenModal(id)}>Detalhes</BtnProd>
+                  <BtnEdit onClick={() => setOpenIsModal(true)}>Editar</BtnEdit>
                   <Btndel onClick={() => deleteProd(id)}>Deletar</Btndel>
                 </Botoes>
                 <p>Nome: {name}</p>
@@ -67,6 +104,36 @@ const ListaProduto = () => {
             </li>
           ))}
       </ul>
+      <Modal2 isOpen={openIsModal} onRequestClose={() => setOpenIsModal(false)}>
+        <button onClick={() => setOpenIsModal(false)}>X</button>
+        <Input
+          type="text"
+          name="nomeProduto"
+          placeholder="Nome do Produto"
+          {...name}
+        />
+        <Input
+          label="Descrição"
+          type="text"
+          name="descricao"
+          placeholder="Faça a descrição do Produto"
+          {...descricao}
+        />
+        <ul>
+          {listaProd &&
+            listaProd.map(({ id, name, descricao, logo, manual }) => (
+              <li key={id}>
+                <ListaProd>
+                  <p>Nome: {name}</p>
+                  <p>Descrição: {descricao}</p>
+                  <p>Logo:{logo}</p>
+                  <p>Manual:{manual}</p>
+                  <button onClick={() => alterarProd(id)}>Editar</button>
+                </ListaProd>
+              </li>
+            ))}
+        </ul>
+      </Modal2>
     </Geral>
   );
 };
